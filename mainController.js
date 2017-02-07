@@ -6,6 +6,8 @@
     .controller("Main", ['CsvService', Callback])
 
   function Callback(CsvService){
-    this.name = "bob"
+    this.data = CsvService.getData().then((data) => {
+      console.log(data)
+    })
   }
 })()
