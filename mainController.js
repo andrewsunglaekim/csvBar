@@ -3,16 +3,20 @@
 
   angular
     .module('csvBar')
-    .controller("Main", ['CsvService', Callback])
+    .controller("Main", ['CsvService', '$scope', 'focus', Callback])
 
-  function Callback(CsvService){
+  function Callback(CsvService, $scope, focus){
     let vm = this
+    this.doSomething = ($colIndex, $numIndex) => {
+      console.log("doing something")
+      focus(`${$colIndex} ${$numIndex}`)
+    }
     CsvService.getData().then((data) => {
-      vm.data = data  
+      vm.data = data
       vm.totals = vm.getTotals()
     })
-    vm.onClick = (colIndex, numIndex) => {
-      console.log(colIndex, numIndex)
+    vm.onSubmit = (e, colIndex, numIndex) => {
+      console.log(e, colIndex, numIndex)
     }
     vm.getTotals = () => {
       return vm.data.map((col) => {
