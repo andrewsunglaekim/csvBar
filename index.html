@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app='csvBar'>
 <head>
   <title>Column Separated Bar</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js">
-  <script src="script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js'></script>
+  <script src='script.js'></script>
+  <script src='mainController.js'></script>
+  <script src='csvService.js'></script>
 </head>
 <body>
+  <div data-ng-controller='Main as vm'>
+    {{"hello from a controller!"}}
+  </div>
   Hello!
 </body>
 </html>
