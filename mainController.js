@@ -6,8 +6,9 @@
     .controller("Main", ['CsvService', Callback])
 
   function Callback(CsvService){
-    this.data = CsvService.getData().then((data) => {
-      console.log(data)
+    let vm = this
+    CsvService.getData().then((data) => {
+      vm.data = data  
     })
   }
 })()
