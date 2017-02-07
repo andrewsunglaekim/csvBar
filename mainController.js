@@ -15,8 +15,11 @@
       vm.data = data
       vm.totals = vm.getTotals()
     })
-    vm.onSubmit = (e, colIndex, numIndex) => {
-      console.log(e, colIndex, numIndex)
+    vm.onSubmit = (colIndex, numIndex, newVal, $event) => {
+      console.log(vm.getTotals())
+      vm.data[colIndex][numIndex] = parseInt(newVal)
+      console.log(vm.getTotals())
+      $event.target.children[0].value = ''
     }
     vm.getTotals = () => {
       return vm.data.map((col) => {
