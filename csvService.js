@@ -5,5 +5,8 @@
 
   function Callback($http){
     console.log("service callback hit")
+    $http.get('./random.csv').then((data)=>{
+      console.log(data)
+    })
   }
 })()
