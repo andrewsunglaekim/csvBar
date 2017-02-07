@@ -2,16 +2,23 @@
 <html data-ng-app='csvBar'>
 <head>
   <title>Column Separated Bar</title>
+  <link rel='stylesheet' href='styles.css'>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js'></script>
   <script src='script.js'></script>
   <script src='mainController.js'></script>
   <script src='csvService.js'></script>
 </head>
 <body>
+  <header>
+    <h1>Some Header</h1>
+  </header>
   <div data-ng-controller='Main as vm'>
-  {{vm.data}}
+    <div data-ng-repeat='column in vm.data' ng-class='column'>
+      <div data-ng-repeat='number in column' class='number' data-ng-click='vm.onClick($parent.$index, $index)'>
+        {{number}}
+      </div>
+    </div>
   </div>
-  Hello!
 </body>
 </html>
 

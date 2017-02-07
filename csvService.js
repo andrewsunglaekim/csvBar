@@ -16,7 +16,7 @@
         }
         csvArray.forEach((row) => {
           row.forEach((num, i) => {
-            colCsvArray[i].push(num)
+            colCsvArray[i].push(parseInt(num))
           })
         })
         return colCsvArray
