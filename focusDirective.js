@@ -13,7 +13,7 @@
       });
     };
   });
-  app .factory('focus', function($timeout, $window) {
+  app.factory('focus', function($timeout, $window) {
     return function(id) {
       // timeout makes sure that it is invoked after any other event has been triggered.
       // e.g. click events that need to run before the focus or

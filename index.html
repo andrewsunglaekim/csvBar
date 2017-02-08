@@ -15,8 +15,8 @@
   </header>
   <div data-ng-controller='Main as vm'>
     <div data-ng-repeat='column in vm.data' ng-class='column'>
-      <div data-ng-repeat='number in column' class='number' data-ng-click='isEditing = !isEditing; vm.doSomething($parent.$index, $index)'>
-        <form data-ng-show='isEditing' data-ng-submit='vm.onSubmit($parent.$index, $index, newVal, $event); isEditing = !isEditing'>
+      <div data-ng-repeat='number in column' class='number' data-ng-click='isEditing = !isEditing; vm.enableEdit($parent.$index, $index, $event)'>
+        <form data-ng-show='isEditing' data-ng-submit='vm.editData($parent.$index, $index, newVal, $event); isEditing = !isEditing'>
           <input type='text' data-ng-model='newVal' id="{{$parent.$index}} {{$index}}" autofocus="{{focusInput || 'false'}}">
         </form>
         <div data-ng-show='!isEditing'>
