@@ -1,18 +1,8 @@
+// TODO: look at notes for eventFocusDirective.js
 (function(){
-  let app = angular.module('csvBar')
-  app.directive('eventFocus', function(focus) {
-    return function(scope, elem, attr) {
-      elem.on(attr.eventFocus, function() {
-        focus(attr.eventFocusId);
-      });
+  'use strict'
 
-      // Removes bound events in the element itself
-      // when the scope is destroyed
-      scope.$on('$destroy', function() {
-        elem.off(attr.eventFocus);
-      });
-    };
-  });
+  let app = angular.module('csvBar')
   app.factory('focus', function($timeout, $window) {
     return function(id) {
       // timeout makes sure that it is invoked after any other event has been triggered.

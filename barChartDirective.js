@@ -1,3 +1,8 @@
+// TODO: leverage d3 in directive:
+// currently can get initial chart to load
+// can get new data to log when edited
+// unfortunately chart isn't replaced when new data comes in.
+// directive not currently being used in application
 (function(){
   'use strict';
 

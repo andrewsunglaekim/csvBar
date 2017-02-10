@@ -8,7 +8,8 @@
   <script src='script.js'></script>
   <script src='mainController.js'></script>
   <script src='csvService.js'></script>
-  <script src='focusDirective.js'></script>
+  <script src='autoFocus/eventFocusDirective.js'></script>
+  <script src='autoFocus/factory.js'></script>
   <script src='barChartDirective.js'></script>
 </head>
 <body>
@@ -19,7 +20,7 @@
     <div class='barChart'>
       <div data-ng-repeat='number in vm.totals'>
         <div data-ng-style='vm.calcBarWidth(number)' class='bar'>
-        {{number}}
+          {{number}}
         </div>
       </div>
 
