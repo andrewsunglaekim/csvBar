@@ -1,9 +1,19 @@
 * {
   box-sizing: border-box; }
 
-/* Header */
+body {
+  background: #EBE9E9; }
+
+/* Header and fonts */
 header {
   text-align: center; }
+
+h1, h2 {
+  font-family: 'Oswald', sans-serif;
+  color: #2E3532; }
+
+body {
+  font-family: 'Arsenal', sans-serif; }
 
 /* Bar Chart */
 div.barChart {
@@ -11,15 +21,29 @@ div.barChart {
   margin-bottom: 4em;
   width: 70%;
   border-left: 1px solid black;
-  border-bottom: 1px solid black; }
+  border-bottom: 1px solid black;
+  margin-top: 2em; }
   div.barChart .bar {
-    background: lemonchiffon;
+    padding: .1em .5em .2em;
+    margin-bottom: .5em;
     text-align: right;
-    margin-bottom: .5em; }
+    background: #71a6fc;
+    color: #777; }
 
 /* Table */
 h2 {
   text-align: center; }
+
+div.totals {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  div.totals div {
+    flex: 1;
+    text-align: center;
+    padding: .2em;
+    border: 2px solid black;
+    border-top: 3px solid black; }
 
 div.table {
   display: flex;
@@ -28,6 +52,8 @@ div.table {
   border-left: 1px solid black; }
   div.table div.column {
     flex: 1; }
+    div.table div.column div.number:nth-child(odd) {
+      background: #fff; }
     div.table div.column .number * {
       text-align: center;
       padding: .2em;
