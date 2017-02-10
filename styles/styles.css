@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box; }
+
+/* Header */
+header {
+  text-align: center; }
+
+/* Bar Chart */
+div.barChart {
+  margin: auto;
+  margin-bottom: 4em;
+  width: 70%;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black; }
+  div.barChart .bar {
+    background: lemonchiffon;
+    text-align: right;
+    margin-bottom: .5em; }
+
+/* Table */
+h2 {
+  text-align: center; }
+
+div.table {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid black;
+  border-left: 1px solid black; }
+  div.table div.column {
+    flex: 1; }
+    div.table div.column .number * {
+      text-align: center;
+      padding: .2em;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black; }
+
+/*# sourceMappingURL=styles.css.map */
