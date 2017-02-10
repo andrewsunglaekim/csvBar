@@ -27,3 +27,4 @@ Then open browser to `http://localhost:8080`.
 - Ideally, it'd be nice to incorporate some file I/O to import export CSV's and provide interface for that.
   - customizations to tag column/row names and incorporate to csv export/import
 - Animations for the bar charts on change
+- Leverage d3 for visualization layer
