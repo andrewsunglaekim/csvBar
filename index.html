@@ -4,17 +4,25 @@
   <title>Column Separated Bar</title>
   <link rel='stylesheet' href='styles.css'>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.js'></script>
   <script src='script.js'></script>
   <script src='mainController.js'></script>
   <script src='csvService.js'></script>
   <script src='focusDirective.js'></script>
+  <script src='barChartDirective.js'></script>
 </head>
 <body>
   <header>
     <h1>Some Header</h1>
   </header>
   <div data-ng-controller='Main as vm'>
-    <div data-ng-repeat='column in vm.data' ng-class='column'>
+    <div class='barChart'>
+      <div data-ng-repeat='number in vm.totals'>
+        {{number}}
+      </div>
+
+    </div>
+    <div data-ng-repeat='column in vm.data' class='column'>
       <div data-ng-repeat='number in column' class='number' data-ng-click='isEditing = !isEditing; vm.enableEdit($parent.$index, $index, $event)'>
         <form data-ng-show='isEditing' data-ng-submit='vm.editData($parent.$index, $index, newVal, $event); isEditing = !isEditing'>
           <input type='text' data-ng-model='newVal' id="{{$parent.$index}} {{$index}}" autofocus="{{focusInput || 'false'}}">

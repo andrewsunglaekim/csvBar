@@ -17,9 +17,10 @@
       focus(`${$colIndex} ${$numIndex}`)
     }
     vm.editData = (colIndex, numIndex, newVal, $event) => {
-      console.log(vm.getTotals())
       vm.data[colIndex][numIndex] = parseInt(newVal)
-      console.log(vm.getTotals())
+      vm.totals = vm.getTotals()
+      console.log(vm.data);
+      console.log(vm.totals);
       $event.target.children[0].value = ''
     }
     vm.getTotals = () => {
