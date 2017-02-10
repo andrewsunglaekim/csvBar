@@ -18,7 +18,9 @@
   <div data-ng-controller='Main as vm'>
     <div class='barChart'>
       <div data-ng-repeat='number in vm.totals'>
+        <div data-ng-style='vm.calcBarWidth(number)' class='bar'>
         {{number}}
+        </div>
       </div>
 
     </div>

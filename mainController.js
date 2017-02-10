@@ -10,6 +10,7 @@
     CsvService.getData().then((data) => {
       vm.data = data
       vm.totals = vm.getTotals()
+      vm.setMinMaxTotal()
     })
     this.enableEdit = ($colIndex, $numIndex, $event) => {
       let input = $event.target.parentElement.children[0].children[0]
@@ -19,8 +20,7 @@
     vm.editData = (colIndex, numIndex, newVal, $event) => {
       vm.data[colIndex][numIndex] = parseInt(newVal)
       vm.totals = vm.getTotals()
-      console.log(vm.data);
-      console.log(vm.totals);
+      vm.setMinMaxTotal()
       $event.target.children[0].value = ''
     }
     vm.getTotals = () => {
@@ -31,6 +31,16 @@
 
       })
     }
-
+    vm.calcBarWidth = (num) => {
+      let diff = vm.max - vm.min
+      let percentage = (1 - (vm.max - num) / diff) * 40
+      return {
+        width: `${60 + percentage}%`
+      }      
+    }
+    vm.setMinMaxTotal = () => {
+      vm.max = Math.max(...vm.totals)
+      vm.min = Math.min(...vm.totals)
+    }
   }
 })()
